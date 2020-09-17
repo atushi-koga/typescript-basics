@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nconsole.log('Hello TypeScript by webpack!!!!!!!');\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+eval("\nconsole.log('Hello TypeScript by webpac      k------------');\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ })
 

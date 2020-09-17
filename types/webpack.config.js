@@ -1,11 +1,11 @@
 const path = require('path');
 
 module.exports = {
-// モード値を production に設定すると最適化された状態で、
-// development に設定するとソースマップ有効でJSファイルが出力される
+    // モード値を production に設定すると最適化された状態で、
+    // development に設定するとソースマップ有効でJSファイルが出力される
     mode: 'development', // "production" | "development" | "none"
 
-// メインとなるJavaScriptファイル（エントリーポイント）
+    // メインとなるJavaScriptファイル（エントリーポイント）
     entry: './src/index.ts',
 
     output: {
@@ -21,7 +21,7 @@ module.exports = {
             use: 'ts-loader'
         }]
     },
-// import 文で .ts ファイルを解決するため
+    // import 文で .ts ファイルを解決するため
     resolve: {
         modules: [
             "node_modules", // node_modules 内も対象とする
