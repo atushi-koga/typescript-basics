@@ -10,7 +10,8 @@ module.exports = {
 
     output: {
         path: path.join(__dirname, "dist"),
-        filename: "index.js"
+        filename: "index.js",
+        publicPath: "/dist"
     },
 
     module: {
@@ -30,5 +31,10 @@ module.exports = {
             '.ts',
             '.js' // node_modulesのライブラリ読み込みに必要
         ]
+    },
+    devServer: {
+        contentBase: './',    // 公開するリソースのドキュメントルート
+        open: true,
+        watchContentBase: true  // contentBase以下に置かれたファイルに変更があった場合、ブラウザ全体をリロードする
     }
 };

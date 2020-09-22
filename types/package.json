@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "lite-server",
+    "dev": "webpack-dev-server --config webpack.config.js",
     "tsc": "tsc",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
     "ts-loader": "^8.0.3",
@@ -15,6 +15,7 @@
     "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "lite-server": "^2.5.4",
+    "webpack-dev-server": "^3.11.0"
   }
 }
