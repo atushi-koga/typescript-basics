@@ -34,7 +34,6 @@ module.exports = {
     },
     devServer: {
         contentBase: './',    // 公開するリソースのドキュメントルート
-        open: true,
         watchContentBase: true  // contentBase以下に置かれたファイルに変更があった場合、ブラウザ全体をリロードする
     }
 };
