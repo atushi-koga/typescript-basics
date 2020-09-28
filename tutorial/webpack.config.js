@@ -1,3 +1,4 @@
+// webpackに記述するパスは絶対パス
 const path = require('path');
 
 module.exports = {
@@ -9,9 +10,9 @@ module.exports = {
     entry: './src/index.ts',
 
     output: {
-        path: path.join(__dirname, "dist"),
-        filename: "index.js",
-        publicPath: "/dist"
+        path: path.resolve(__dirname, "test"),  // ビルドしたファイルの出力先パス
+        filename: "index.js",                   // ビルドしたファイルのファイル名
+        publicPath: path.resolve(__dirname, "dist") // ブラウザで参照する際の出力ディレクトリの公開URLを指定する。オンデマンドロードを使用したり、画像やファイルなどの外部リソースをロードしたりする場合など。
     },
 
     module: {
