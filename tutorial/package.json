@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "tsc"
+    "tsc": "tsc",
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
     "ts-loader": "^8.0.4",
