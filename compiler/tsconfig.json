@@ -25,7 +25,7 @@
     // "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
     // "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
     /* Strict Type-Checking Options */
-    "strict": true,                           /* Enable all strict type-checking options. */
+    "strict": true,                           /* すべての厳密なタイプチェックオプションを有効にする。*/
 //     "noImplicitAny": true,                 /* 暗黙の 'any' 型を持つ式や宣言に対してエラーを発生させる。 */
     // "strictNullChecks": true,              /* Enable strict null checks. */
     // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
@@ -34,11 +34,11 @@
     // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
     // "alwaysStrict": true,                  /* strict モードでパースし、各ソースファイルに対して "use strict" を発行します。 */
 
-    /* Additional Checks */
-    // "noUnusedLocals": true,                /* Report errors on unused locals. */
-    // "noUnusedParameters": true,            /* Report errors on unused parameters. */
-    // "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
-    // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
+    /* Code Quality Options */
+     "noUnusedLocals": true,                /* 未使用のローカル変数が存在する場合にエラーを発生させる */
+     "noUnusedParameters": true,            /* 未使用のパラメータが存在する場合にエラーを発生させる */
+     "noImplicitReturns": true,             /* 関数内のすべてのコードパスが値を返さない場合にエラーを発生させる */
+     "noFallthroughCasesInSwitch": true,    /* switch文のフォールスルーケースが存在する場合にエラーを発生させる。(フォールスルーケース:switch文のcase内でbreakが無い場合に、その下のcaseの処理も実行されること) */
 
     /* Module Resolution Options */
     // "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
