@@ -16,22 +16,17 @@ module.exports = {
     },
 
     module: {
-        rules: [{
-            // 拡張子 .ts の場合
-            test: /\.ts$/,
-            // TypeScript をコンパイルする
-            use: 'ts-loader'
-        }]
-    },
-    // import 文で .ts ファイルを解決するため
-    resolve: {
-        modules: [
-            "node_modules", // node_modules 内も対象とする
-        ],
-        extensions: [
-            '.ts',
-            '.js' // node_modulesのライブラリ読み込みに必要
+        rules: [
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/ // node_modules配下は探しに行かないようにする
+            }
         ]
+    },
+    resolve: {
+        // import文に渡された拡張子無しのパスに対して、'.ts','.js'ファイルを探しに行く
+        extensions: ['.ts', '.js']
     },
     devServer: {
         contentBase: './',    // 公開するリソースのドキュメントルート
