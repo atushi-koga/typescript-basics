@@ -1,12 +1,16 @@
 import React, {useRef} from "react";
 
-const NewTodo: React.FC = () => {
+type NewTodoProps = {
+    onAddTodo: (todoText: string) => void;
+};
+
+const NewTodo: React.FC<NewTodoProps> = props => {
     const inputTextRef = useRef<HTMLInputElement>(null);
 
     const submitHandler = (e: React.FormEvent) => {
         e.preventDefault(); // fromが送信アクションを起こさないようにする。
         const text = inputTextRef.current!.value;
-        console.log(text);
+        props.onAddTodo(text);
     };
 
     return (
