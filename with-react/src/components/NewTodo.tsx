@@ -9,8 +9,7 @@ const NewTodo: React.FC<NewTodoProps> = props => {
 
     const submitHandler = (e: React.FormEvent) => {
         e.preventDefault(); // fromが送信アクションを起こさないようにする。
-        const text = inputTextRef.current!.value;
-        props.onAddTodo(text);
+        props.onAddTodo(inputTextRef.current!.value)
     };
 
     return (

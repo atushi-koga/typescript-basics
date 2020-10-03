@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TodoList from "./components/TodoList";
 import NewTodo from "./components/NewTodo";
+import {Todo} from "./todo.model";
 
 // React.FC: functional componentの型
 // React.ClassicComponent: class componentの型
 const App: React.FC = () => {
-    const todos = [{id: '1', text: 'Finish the course'}];
+    const [todos, addTodo] = useState<Todo[]>([]);
+
     const addTodoHandler = (text: string) => {
-        console.log(text);
+        const added = {id: Math.random().toString(), text: text};
+        addTodo([...todos, added]);
     }
 
     return (
