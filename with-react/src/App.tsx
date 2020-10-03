@@ -6,17 +6,21 @@ import {Todo} from "./todo.model";
 // React.FC: functional componentの型
 // React.ClassicComponent: class componentの型
 const App: React.FC = () => {
-    const [todos, addTodo] = useState<Todo[]>([]);
+    const [todos, setTodo] = useState<Todo[]>([]);
 
     const addTodoHandler = (text: string) => {
         const added = {id: Math.random().toString(), text: text};
-        addTodo(prevTodos => [...prevTodos, added]);
+        setTodo(prevTodos => [...prevTodos, added]);
+    }
+
+    const removeTodoHandler = (id: string) => {
+        setTodo(prevTodos => prevTodos.filter(todo => todo.id !== id));
     }
 
     return (
         <div className="App">
             <NewTodo onAddTodo={addTodoHandler}/>
-            <TodoList items={todos}/>
+            <TodoList items={todos} onRemoveTodo={removeTodoHandler}/>
         </div>
     );
 }
