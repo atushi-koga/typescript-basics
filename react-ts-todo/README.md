@@ -13,3 +13,7 @@
 ## React、Reduxインストール
 - インストール
 - 動作確認
+
+## Note
+- tsconfig.json, webpack.config.json の設定内容に過不足ないか
+- webpackの本番環境用の設定ファイル
