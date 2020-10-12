@@ -6,7 +6,7 @@ module.exports = {
     mode: 'development', // "production" | "development" | "none"
 
     // メインとなるJavaScriptファイル（エントリーポイント）
-    entry: './src/index.ts',
+    entry: './src/index.tsx',
 
     output: {
         path: path.resolve(__dirname, "dist"),  // ビルドしたファイルの出力先パス
@@ -18,8 +18,9 @@ module.exports = {
 
     module: {
         rules: [{
-            // 拡張子 .ts の場合、TypeScript をコンパイルする(node_modules配下は除く)
-            test: /\.ts$/,
+            // 拡張子 .tsx の場合、TypeScript をコンパイルする(node_modules配下は除く)
+            // TS と Reactを組み合わせる場合、基本的に .tsx のみを使うので、それだけを指定
+            test: /\.tsx$/,
             use: 'ts-loader',
             exclude: /node_modules/
         }]
@@ -29,9 +30,11 @@ module.exports = {
         modules: [
             "node_modules", // node_modules 内も対象とする
         ],
-        // import文に渡された拡張子無しのパスに対して、'.ts','.js'ファイルを探しに行く
+        // import文に渡された拡張子無しのパスに対して、'.ts','.js'ファイルを探しに行くようにする。
+        // これにより、拡張子を書かなくて済む。
         extensions: [
             '.ts',
+            '.tsx',
             '.js' // node_modulesのライブラリ読み込みに必要
         ]
     },
