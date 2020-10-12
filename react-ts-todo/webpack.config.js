@@ -11,7 +11,9 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),  // ビルドしたファイルの出力先パス
         filename: "index.js",                   // ビルドしたファイルのファイル名
-        publicPath: path.resolve(__dirname, "dist") // ブラウザで参照する際の出力ディレクトリの公開URLを指定する。オンデマンドロードを使用したり、画像やファイルなどの外部リソースをロードしたりする場合など。
+        // ブラウザで参照する際の出力ディレクトリの公開URLを指定する。
+        // ローカル環境だと相対パスで良いが、本番環境で画像などがCDN上にある場合はCDNのURLを記述する。
+        publicPath: "/dist"
     },
 
     module: {
