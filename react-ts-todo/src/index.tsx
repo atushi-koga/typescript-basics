@@ -1,22 +1,13 @@
-// function add(a: number, b: number) {
-//     return a + b;
-// }
-//
-// console.log(add(1, 2));
-// console.log(add(1, 2));
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from "./App";
+import reducers from './reducer';
+import {Provider} from 'react-redux';
+import {createStore} from "redux";
 
 ReactDOM.render(
-    <div>Hello</div>,
+    <Provider store={createStore(reducers)}>
+        <App/>
+    </Provider>,
     document.getElementById('root')
 );
-
-
-// ReactDOM.render(
-//     <React.StrictMode>
-//         <App />
-//     </React.StrictMode>,
-// document.getElementById('root')
-// );
