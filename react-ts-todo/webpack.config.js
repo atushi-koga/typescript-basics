@@ -18,9 +18,8 @@ module.exports = {
 
     module: {
         rules: [{
-            // 拡張子 .tsx の場合、TypeScript をコンパイルする(node_modules配下は除く)
-            // TS と Reactを組み合わせる場合、基本的に .tsx のみを使うので、それだけを指定
-            test: /\.tsx$/,
+            // 拡張子 .ts もしくは .tsx の場合、TypeScript をコンパイルする(node_modules配下は除く)
+            test: /\.tsx?$/,
             use: 'ts-loader',
             exclude: /node_modules/
         }]
