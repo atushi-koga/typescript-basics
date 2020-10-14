@@ -1,4 +1,5 @@
 import {combineReducers} from "redux";
+import {AppAction} from "../action";
 
 export interface Song {
     title: string;
@@ -14,10 +15,21 @@ const songsReducer = (): Song[] => {
     ];
 };
 
+// selectedを null もしくは Song型で指定したい
+const selectedSongReducer = (selected = null, action: AppAction) => {
+    if (action.type === 'SELECT_SONG') {
+        return action.payload;
+    }
+
+    return selected;
+}
+
 export interface AppState {
-    songs: Song[]
+    songs: Song[];
+    selected: Song;
 }
 
 export default combineReducers({
-    songs: songsReducer
+    songs: songsReducer,
+    selected: selectedSongReducer
 });
