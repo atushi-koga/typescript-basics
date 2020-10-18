@@ -1,13 +1,12 @@
 import React from 'react';
-import SongList from "./components/SongList";
-import SongDetail from "./components/SongDetail";
+import NewTask from "./components/NewTask";
+import TaskList from "./components/TaskList";
 
 const App: React.FC = () => {
     return (
         <div>
-            <div>Hello!!!</div>
-            <SongList/>
-            <SongDetail/>
+            <NewTask/>
+            <TaskList/>
         </div>
     );
 }

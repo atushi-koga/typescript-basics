@@ -1,9 +1,17 @@
 import {combineReducers} from "redux";
-import {AppAction} from "../action";
+import {AppAction, FetchTasksAction, Task} from "../action";
 
 export interface Song {
     title: string;
     duration: string;
+}
+
+const fetchTaskReducer = (tasks: Task[] = [], action: FetchTasksAction) => {
+    if (action.type === 'FETCH_TASKS') {
+        return action.payload.tasks;
+    }
+
+    return tasks;
 }
 
 const songsReducer = (): Song[] => {
@@ -24,12 +32,15 @@ const selectedSongReducer = (selected = null, action: AppAction) => {
     return selected;
 }
 
+// combineReducers を追加するたびにここをいじらないようにしたい
 export interface AppState {
     songs: Song[];
     selected: Song;
+    tasks: Task[];
 }
 
 export default combineReducers({
     songs: songsReducer,
-    selected: selectedSongReducer
+    selected: selectedSongReducer,
+    tasks: fetchTaskReducer
 });
