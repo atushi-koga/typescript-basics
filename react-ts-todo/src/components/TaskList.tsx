@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import {AppState} from "../reducer";
 import {connect} from "react-redux";
-import {fetchTasks, FetchTasksAction, Task} from "../action";
+import {fetchTasks, Task} from "../action";
 
 interface TaskListProps {
     items: Task[];
-    fetchTasks: () => FetchTasksAction;
+    fetchTasks: () => Promise<void>;
 }
 
 const TaskList: React.FC<TaskListProps> = props => {

@@ -1,4 +1,8 @@
 import {Song} from "../reducer";
+import taskAPI from "../api/taskAPI";
+import {Action, Dispatch} from "redux";
+
+const QUERY = '?token=token123';
 
 export interface Task {
     title: string;
@@ -16,19 +20,15 @@ export interface FetchTasksAction {
     payload: { tasks: Task[] };
 }
 
-export const fetchTasks = (): FetchTasksAction => {
-    // APIを実行してタスクを取得、payloadに含める
+export const fetchTasks = () => async (dispatch: Dispatch<Action>) => {
+    const response = await taskAPI.get(`/events${QUERY}`);
 
-
-    return {
+    dispatch({
         type: 'FETCH_TASKS',
         payload: {
-            tasks: [
-                {title: 'test1', content: 'content1'},
-                {title: 'test2', content: 'content2'}
-            ]
+            tasks: response.data
         }
-    }
+    });
 }
 
 export const selectSongAction = (song: Song): AppAction => {
